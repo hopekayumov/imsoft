@@ -1,26 +1,25 @@
 import React from "react";
 import { Layout, Breadcrumb } from "antd";
-
-const { Content } = Layout;
+import ContentDash from "../Content/Content";
+import { useLocation } from "react-router-dom";
 
 const Main = () => {
+  const { pathname } = useLocation();
+  const path = pathname.split("/");
+  const pathTo = path.map((item) => {
+    return item.charAt(0).toUpperCase() + item.slice(1);
+  }, []);
+
   return (
     <Layout style={{ padding: "0 24px 24px" }}>
       <Breadcrumb style={{ margin: "16px 0" }}>
+        {/* Nav strory */}
         <Breadcrumb.Item>Панел</Breadcrumb.Item>
         <Breadcrumb.Item>Справочник</Breadcrumb.Item>
-        <Breadcrumb.Item>App</Breadcrumb.Item>
+        <Breadcrumb.Item>{pathTo}</Breadcrumb.Item>
       </Breadcrumb>
-      <Content
-        className="site-layout-background"
-        style={{
-          padding: 24,
-          margin: 0,
-          minHeight: 280,
-        }}
-      >
-        Content
-      </Content>
+      {/* Content */}
+      <ContentDash />
     </Layout>
   );
 };
