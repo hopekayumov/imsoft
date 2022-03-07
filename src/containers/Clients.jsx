@@ -1,5 +1,6 @@
-import { Layout, Table } from "antd";
+import { Button, Layout, Pagination, Row, Table, Typography } from "antd";
 import React, { useState } from "react";
+import { PlusCircleFilled } from "@ant-design/icons/";
 
 const Clients = () => {
   const [dataSource, setDataSource] = useState([
@@ -89,7 +90,41 @@ const Clients = () => {
 
   return (
     <Layout>
-      <Table dataSource={dataSource} columns={columns} />
+      <Row
+        style={{
+          backgroundColor: "white",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        <Typography>
+          <h1>Клиенты</h1>
+        </Typography>
+        <Button
+          type="primary"
+          icon={<PlusCircleFilled />}
+          block
+          size="large"
+          style={{
+            backgroundColor: "#001529",
+            color: "white",
+            width: "auto",
+            marginBottom: "10px",
+          }}
+        >
+          Добавить клиента
+        </Button>
+      </Row>
+
+      <Table dataSource={dataSource} columns={columns} pagination={false} />
+      <Layout style={{ backgroundColor: "white" }}>
+        <Pagination
+          defaultCurrent={1}
+          total={50}
+          style={{ marginTop: "25px" }}
+        />
+      </Layout>
     </Layout>
   );
 };
