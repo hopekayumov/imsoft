@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 
 const HeaderDash = () => {
   return (
-    <Header className="header">
+    <Header
+      className="header"
+      style={{ position: "sticky", top: "0", zIndex: "99" }}
+    >
       <div className="logo">IMSOFT</div>
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
         <Menu.Item key="1">

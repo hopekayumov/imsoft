@@ -11,7 +11,7 @@ const Main = () => {
   }, []);
 
   return (
-    <Layout style={{ padding: "0 24px 24px" }}>
+    <Layout style={{ padding: "0 24px 24px", height: "100%", width: "100%" }}>
       <Breadcrumb style={{ margin: "16px 0" }}>
         {/* Nav strory */}
         <Breadcrumb.Item>Панел</Breadcrumb.Item>

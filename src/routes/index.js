@@ -1,5 +1,5 @@
 import NotFound from "../containers/NotFound/NotFound";
-import Clients from "../containers/Clients";
+import Clients from "../containers/Clients/Clients";
 import Detal from "../containers/Detal";
 import Model from "../containers/Model";
 

@@ -13,7 +13,7 @@ const SiderDash = () => {
         mode="inline"
         defaultSelectedKeys={["1"]}
         defaultOpenKeys={["sub1"]}
-        style={{ height: "100%", borderRight: 0 }}
+        style={{ height: "100vh", borderRight: 0 }}
       >
         <SubMenu key="sub1" icon={<UserOutlined />} title="Cправочник">
           <Menu.Item key="1">
