@@ -1,6 +1,6 @@
 import { Table, Typography } from "antd";
 import React from "react";
-import { clientsData } from "../../data/clientsData";
+import { clientsData } from "../../../data/clientsData";
 
 const columns = [
   {

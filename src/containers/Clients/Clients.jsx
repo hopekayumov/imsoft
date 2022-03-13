@@ -1,8 +1,8 @@
 import { Button, Col, Layout, Row, Typography } from "antd";
 import React, { useState } from "react";
-import { PlusCircleFilled } from "@ant-design/icons/";
-import ClientsTable from "./ClientsTable";
-import Modal from "antd/lib/modal/Modal";
+import ClientsTable from "./components/ClientsTable";
+import { PlusCircleFilled } from "@ant-design/icons";
+import ClientsModal from "./components/ClientsModal";
 
 const Clients = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -52,16 +52,11 @@ const Clients = () => {
         <Row>
           <Col xs={24} md={24}>
             <ClientsTable isModalVisible={isModalVisible} />
-            <Modal
-              title="Basic Modal"
-              visible={isModalVisible}
-              onOk={handleOk}
-              onCancel={handleCancel}
-            >
-              <p>Some contents...</p>
-              <p>Some contents...</p>
-              <p>Some contents...</p>
-            </Modal>
+            <ClientsModal
+              handleCancel={handleCancel}
+              handleOk={handleOk}
+              isModalVisible={isModalVisible}
+            />
           </Col>
         </Row>
       </Layout>
