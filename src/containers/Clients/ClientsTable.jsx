@@ -66,6 +66,7 @@ const ClientsTable = () => {
           hideOnSinglePage: true,
         }}
         style={{ width: "100%", height: "100%" }}
+        rowKey="id"
       />
     </>
   );
