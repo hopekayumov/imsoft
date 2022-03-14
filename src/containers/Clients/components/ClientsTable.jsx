@@ -74,6 +74,22 @@ const ClientsTable = ({ handleDeleteClient }) => {
       title: "Социальные сети",
       dataIndex: "socialMedia",
       key: "socialMedia",
+      render: (text) => {
+        return (
+          <div
+            style={{
+              margin: "0 auto",
+              width: "100px",
+              padding: "5px",
+              border: "1px solid #0E185F",
+              textAlign: "center",
+              borderRadius: "8px",
+            }}
+          >
+            <Typography style={{ color: "#0E185F" }}>{text}</Typography>
+          </div>
+        );
+      },
       filters: [
         {
           text: "Telegram",
