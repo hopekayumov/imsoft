@@ -36,6 +36,9 @@ const ClientsTable = ({ handleDeleteClient }) => {
       title: "Номер телефона",
       dataIndex: "phoneNumber",
       key: "phoneNumber",
+      render: (text) => {
+        return <Typography.Text copyable>{text}</Typography.Text>;
+      },
     },
     {
       title: "Электронная почта",

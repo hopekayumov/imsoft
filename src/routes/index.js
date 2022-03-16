@@ -1,7 +1,7 @@
 import NotFound from "../containers/NotFound/NotFound";
 import Clients from "../containers/Clients/Clients";
 import Detal from "../containers/Detal";
-import Model from "../containers/Model";
+import Model from "../containers/Model/Model";
 
 export const routes = [
   {
