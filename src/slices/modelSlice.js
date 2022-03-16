@@ -8,24 +8,39 @@ const clientsSlice = createSlice({
         id: "1",
         name: "Iphone 13 pro max",
         photo:
-          "https://www.apple.com/v/iphone-11/c/images/1a/f9/1af9f9f9-f9f9-f9f9-f9f9-f9f9f9f9f9f9_large.jpg",
+          "https://assets.swappie.com/swappie-product-iphone-12-pro-pacific-blue-back.png",
       },
       {
         id: "2",
         name: "Iphone 11 pro",
         photo:
-          "https://www.apple.com/v/iphone-11/c/images/1a/f9/1af9f9f9-f9f9-f9f9-f9f9-f9f9f9f9f9f9_large.jpg",
+          "https://my-apple-store.ru/wa-data/public/shop/products/38/17/11738/images/17257/17257.750x0.jpg",
+      },
+      {
+        id: "3",
+        name: "Iphone 11",
+        photo:
+          "https://www.theioutlet.com/wp-content/uploads/2019/11/iphone11-yellow-select-2019_GEO_EMEA.png",
+      },
+      {
+        id: "4",
+        name: "Iphone 11 pro max",
+        photo:
+          "https://unblast.com/wp-content/uploads/2019/10/Floating-iPhone-11-Pro-Max-Mockup-2.jpg",
       },
     ],
   },
   reducers: {
     addModel: (state, action) => {
       state.models.push(action.payload);
+      console.log(state.models);
     },
     deleteModel: (state, action) => {
-      state.models = state.models.filter(
-        (model) => model.id !== action.payload
-      );
+      const { id } = action.payload;
+      return {
+        ...state,
+        models: state.models.filter((model) => model.id !== id),
+      };
     },
   },
 });

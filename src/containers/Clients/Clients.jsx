@@ -65,7 +65,7 @@ const Clients = () => {
       <Layout>
         <Row>
           <Col xs={24} md={24}>
-            <ClientsTable isModalVisible={isModalVisible} />
+            <ClientsTable />
             <ClientsModal
               handleCancel={handleCancel}
               handleOk={handleOk}
