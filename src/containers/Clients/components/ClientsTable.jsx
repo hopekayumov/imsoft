@@ -137,7 +137,6 @@ const ClientsTable = ({ handleDeleteClient }) => {
 
   const dispatch = useDispatch();
   const { clients } = useSelector((state) => state.clients);
-  console.log(clients.id);
 
   return (
     <>
