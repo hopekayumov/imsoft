@@ -33,13 +33,25 @@ const ClientsModal = ({
         keyboard
         title="Добавить клиента"
         visible={isModalVisible}
-        onOk={handleOk}
+        onOk={
+          name === "" ||
+          dateOfbirth === "" ||
+          phoneNumber === "" ||
+          email === "" ||
+          address === "" ||
+          socialMedia === ""
+            ? () => {
+                alert("Заполните все поля");
+              }
+            : handleOk
+        }
         okText="Добавить"
         cancelText="Отмена"
         onCancel={handleCancel}
         width="50%"
       >
         <Input
+          required
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Имя Фамилия"
@@ -49,6 +61,7 @@ const ClientsModal = ({
         <br />
         <br />
         <Input
+          required
           value={dateOfbirth}
           onChange={(e) => setDateOfbirth(e.target.value)}
           placeholder="Дата рождения"
@@ -58,6 +71,7 @@ const ClientsModal = ({
         <br />
         <br />
         <Input
+          required
           value={phoneNumber}
           onChange={(e) => setPhoneNumber(e.target.value)}
           placeholder="Номер телефона"
@@ -67,6 +81,7 @@ const ClientsModal = ({
         <br />
         <br />
         <Input
+          required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Электронная почта"
@@ -76,6 +91,7 @@ const ClientsModal = ({
         <br />
         <br />
         <Input
+          required
           value={address}
           onChange={(e) => setAddress(e.target.value)}
           placeholder="Адрес"
@@ -85,6 +101,7 @@ const ClientsModal = ({
         <br />
         <br />
         <Input
+          required
           value={socialMedia}
           onChange={(e) => setSocialMedia(e.target.value)}
           placeholder="Социальные сети"

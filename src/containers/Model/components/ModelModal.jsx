@@ -18,7 +18,13 @@ const ClientsModal = ({
         keyboard
         title="Добавить модель"
         visible={isModalVisible}
-        onOk={handleOk}
+        onOk={
+          name === "" || photo === ""
+            ? () => {
+                alert("Заполните все поля");
+              }
+            : handleOk
+        }
         okText="Добавить"
         cancelText="Отмена"
         onCancel={handleCancel}
