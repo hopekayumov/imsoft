@@ -16,7 +16,9 @@ const Main = () => {
         {/* Nav strory */}
         <Breadcrumb.Item>Панел</Breadcrumb.Item>
         <Breadcrumb.Item>Справочник</Breadcrumb.Item>
-        <Breadcrumb.Item>{pathTo}</Breadcrumb.Item>
+        <Breadcrumb.Item>
+          {pathTo.length > 0 ? pathTo[pathTo.length - 1] : "Справочник"}
+        </Breadcrumb.Item>
       </Breadcrumb>
       {/* Content */}
       <ContentDash />

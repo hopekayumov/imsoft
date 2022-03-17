@@ -15,6 +15,7 @@ const ContentDash = () => {
         minHeight: 280,
       }}
     >
+      {/* Routes */}
       <Routes>
         {routes.map((route, index) => (
           <Route key={index} path={route.path} element={route.component()} />

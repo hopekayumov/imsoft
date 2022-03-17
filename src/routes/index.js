@@ -2,11 +2,12 @@ import NotFound from "../containers/NotFound/NotFound";
 import Clients from "../containers/Clients/Clients";
 import Detal from "../containers/Detal/Detal";
 import Model from "../containers/Model/Model";
+import Main from "../containers/Main/Main";
 
 export const routes = [
   {
     path: "/",
-    component: Clients,
+    component: Main,
   },
   {
     path: "/clients",

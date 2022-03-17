@@ -9,7 +9,9 @@ const HeaderDash = () => {
       className="header"
       style={{ position: "sticky", top: "0", zIndex: "99" }}
     >
-      <div className="logo">DOGTAS</div>
+      <Link to="/">
+        <div className="logo">DOGTAS</div>
+      </Link>
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
         <Menu.Item key="1">
           <Link to="/clients">Клиенты</Link>
