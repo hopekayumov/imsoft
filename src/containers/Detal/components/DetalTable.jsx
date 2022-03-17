@@ -1,10 +1,11 @@
 import React from "react";
 import { Table, Image, Typography, Button } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteModel } from "../../../slices/modelSlice";
+import { deleteDetal } from "../../../slices/detalSlice";
+import QRCode from "react-qr-code";
 
 const ModelTable = () => {
-  const { models } = useSelector((state) => state.models);
+  const { detals } = useSelector((state) => state.detals);
   const dispatch = useDispatch();
   const columns = [
     {
@@ -17,6 +18,14 @@ const ModelTable = () => {
       title: "Название",
       dataIndex: "name",
       key: "name",
+    },
+    {
+      title: "Штрих-код",
+      dataIndex: "barcode",
+      key: "barcode",
+      render: (text, record) => {
+        return <QRCode size={90} value={text} />;
+      },
     },
     {
       title: "Фото",
@@ -36,7 +45,7 @@ const ModelTable = () => {
             danger
             onClick={() =>
               dispatch(
-                deleteModel({
+                deleteDetal({
                   id: record.id,
                 })
               )
@@ -53,12 +62,11 @@ const ModelTable = () => {
       <Table
         bordered
         columns={columns}
-        dataSource={models}
+        dataSource={detals}
         rowKey="id"
         pagination={{
           position: ["bottomCenter"],
           pageSize: 2,
-          hideOnSinglePage: true,
         }}
       />
     </>
